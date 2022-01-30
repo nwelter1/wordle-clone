@@ -1,8 +1,12 @@
 class Wordle:
-    def __init__(self, answer, guesses = {k:[] for k in range(5)}, current = []):
+    def __init__(self, answer, guesses, current = []):
         self.answer = answer
-        self.guesses = guesses
+        self.guesses = self.howMany(guesses)
         self.current = current
+
+    def howMany(self, number):
+        return {k:[] for k in range(5)}
+
     
     def guess(self, number):
         print('')
@@ -38,7 +42,7 @@ def run():
     word = input('Enter a 5 letter word to start: ')
     while len(word) != 5:
         word = input('Please enter a 5 letter word: ')
-    test = Wordle(word)
+    test = Wordle(word,6)
     for i in range(6):
         test.guess(i)
         test.printAnswers(i)
