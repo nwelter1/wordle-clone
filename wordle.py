@@ -1,5 +1,5 @@
 class Wordle:
-    def __init__(self, answer, guesses = {0: [], 1:[], 2:[], 3:[], 4:[], 5:[]}, current = []):
+    def __init__(self, answer, guesses = {k:[] for k in range(5)}, current = []):
         self.answer = answer
         self.guesses = guesses
         self.current = current
